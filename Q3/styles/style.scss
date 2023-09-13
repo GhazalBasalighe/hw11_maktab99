@@ -1,8 +1,37 @@
-@use './index' as *;
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
+@use "./index" as *;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
-
+// BODY
+body {
+  height: 100vh;
+}
+// CONTAINER
+.container {
+  border-radius: 20px;
+  position: relative;
+}
+//HEADINGS
+h1 {
+  font-size: 48px;
+  @extend %bold-font;
+}
+// SOCIAL MEADIA ICONS
+.social-media {
+  margin: 20px 0;
+  @extend %flex-item;
+  img {
+    @extend %social-media;
+  }
+}
+span {
+  @extend %small-text;
+}
+form {
+  input {
+    @extend %input;
+  }
+}

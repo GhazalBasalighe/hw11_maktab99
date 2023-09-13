@@ -1,12 +1,32 @@
+@use "./variables" as *;
 //BUTTON
-%btn{
-    border-radius: 20px;
-    border: 2px solid #FFF;
+%btn {
+  border-radius: 20px;
+  border: 2px solid #fff;
 }
 
 //FLEX ITEMS
-%flex-item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+%flex-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// SOCIAL MEDIA ICON
+%social-media {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 0 5px;
+  height: 60px;
+  width: 60px;
+}
+
+// INPUTS
+%input {
+  background-color: $input-bg;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
 }
