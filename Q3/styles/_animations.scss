@@ -1,0 +1,26 @@
+.container.right-panel-active {
+  // TO MOVE SIGN IN CARD TO THE RIGHT
+  .sign-in-container {
+    transform: translateX(100%);
+  }
+  // TO MOVE THE OVERLAY TO THE LEFT
+  .overlay-container {
+    transform: translateX(-100%);
+  }
+  //REPLACE SIGN IN WITH SIGN UP
+  .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 3;
+  }
+  // TO MOVE THE OVERLAY TO THE RIGHT AGAIN
+  .overlays {
+    transform: translateX(50%);
+  }
+  .overlay-left {
+    transform: translateX(0);
+  }
+  .overlay-right {
+    transform: translateX(20%);
+  }
+}
