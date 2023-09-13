@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    </head>
+
+    <body class="d-flex align-items-center justify-content-center vh-100">
+        <div class="container bg-primary w-50 text-white p-5">
+            <form class="d-flex flex-column">
+                <label for="shapes">Shapes:</label>
+                <select name="shapes" id="shapes">
+                    <option value="Please select" selected disabled hidden>Please select</option>
+                    <option value="Rectangle">Rectangle</option>
+                    <option value="Square">Square</option>
+                    <option value="Circle">Circle</option>
+                    <option value="Cylinder">Cylinder</option>
+                </select>
+                <label for="Radius">Radius:</label>
+                <input type="text" id="Radius" disabled>
+                <label for="Width">Width:</label>
+                <input type="text" id="Width" disabled>
+                <label for="Height">Height:</label>
+                <input type="text" id="Height" disabled>
+            </form>
+            <div class="results border-top my-4 pt-4">
+                <div class="perimeter">
+                    <span>Perimeter :</span>
+                    <span></span>
+                </div>
+                <div class="area">
+                    <span>Area :</span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
