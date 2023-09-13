@@ -94,6 +94,9 @@ class NonPolygon extends Shape {
     super(shapeName);
     this.#radius = radius;
   }
+  get radius() {
+    return this.#radius;
+  }
   //overriding methods
   calcArea() {
     console.log(
@@ -183,17 +186,23 @@ class Circle extends NonPolygon {
   }
 
   calcArea() {
+    //A=πr^2
     console.log(
       `The area of this non polygen 
 with radius ${this.radius} called ${this.shapeName} is equal to = ${(
-        Math.PI * Math.pow(this.radius, 2)
+        Math.PI.toFixed(2) * Math.pow(this.radius, 2)
       ).toFixed(2)}`
     );
   }
   calcPerimeter() {
+    //C=2πr
     console.log(
       `The perimeter of this non polygen 
-with radius ${this.radius} called ${this.shapeName}`
+with radius ${this.radius} called ${this.shapeName} is equal to = ${(
+        2 *
+        Math.PI.toFixed(2) *
+        this.radius
+      ).toFixed(2)}`
     );
   }
 }
@@ -233,3 +242,4 @@ mySquare.calcPerimeter();
 
 const myCircle = new Circle("test", 10);
 myCircle.calcArea();
+myCircle.calcPerimeter();
