@@ -73,16 +73,20 @@ class Polygon extends Shape {
   //overriding methods
   calcArea() {
     console.log(
-      `The area of this polygen with
-width: ${this.#width} and height: ${this.#height} 
-called ${this.shapeName}`
+      `The area of this polygen
+width: ${this.#width}
+height: ${this.#height} 
+name: ${this.shapeName}
+---------------`
     );
   }
   calcPerimeter() {
     console.log(
-      `The perimeter of this polygen with
-width: ${this.#width} and height: ${this.#height} 
-called ${this.shapeName}`
+      `The perimeter of this polygen
+width: ${this.#width}
+height: ${this.#height} 
+name: ${this.shapeName}
+---------------`
     );
   }
 }
@@ -101,63 +105,57 @@ class NonPolygon extends Shape {
   calcArea() {
     console.log(
       `The area of this non polygen 
-with radius ${this.#radius} called ${this.shapeName}`
+radius: ${this.#radius} 
+name: ${this.shapeName}
+---------------`
     );
   }
   calcPerimeter() {
     console.log(
       `The perimeter of this non polygen 
-with radius ${this.#radius} called ${this.shapeName}`
+radius: ${this.#radius}
+name: ${this.shapeName}
+---------------`
     );
   }
 }
 
 //-------RECTANGLE CLASS-------
 class Rectangle extends Polygon {
-  constructor(shapeName, width, height) {
-    super(shapeName, width, height);
+  constructor(width, height) {
+    super("Rectangle", width, height);
   }
 
   //override and customize methods
   calcArea() {
     const { width, height } = this.getDimensions();
     console.log(
-      `The area of this Rectangle with
-width: ${width} and height: ${height} 
-called ${this.shapeName} is equal to = ${width * height}`
+      `The area of this Rectangle = ${width * height}
+width: ${width}
+height: ${height} 
+---------------`
     );
+    return width * height;
   }
   calcPerimeter() {
     const { width, height } = this.getDimensions();
     console.log(
-      `The perimeter of this Rectangle with
-width: ${width} and height: ${height} 
-called ${this.shapeName} is equal to = ${(width + height) * 2}`
+      `The perimeter of this Rectangle = ${(width + height) * 2}
+width: ${width}
+height: ${height} 
+---------------`
     );
+    return (width + height) * 2;
   }
 }
 //-------SQUARE CLASS-------
 /*NOTE : 
 this class is extended according to the problem and it does not make any logical sense for a square
 to have width and height! even though every square is also a rectangle
-The better mathematical approach would be as below:
-Shape -> #shapeName
-Polygen -> #numberOfSides
-Non Polygen -> #radius
-Rectangel -> #width , #lenght
-Square -> #side
-Circle -> nothing extra
-Cylinder -> #height
 */
 class Square extends Polygon {
-  constructor(shapeName, width, height) {
-    // T.T wtf is this logic
-    super(shapeName, width, height);
-
-    // some sort of validation to help the logic... ?
-    if (width !== height) {
-      console.log("Careful! Squares don't actually have width and height");
-    }
+  constructor(side) {
+    super("Square", side, side);
   }
 
   //override and customize methods
@@ -165,94 +163,101 @@ class Square extends Polygon {
   calcArea() {
     const { width, height } = this.getDimensions();
     console.log(
-      `The area of this Square with
-side : ${width} called ${this.shapeName} is equal to = ${width * height}`
+      `The area of this Square = ${width * height}
+side : ${width}
+---------------`
     );
+    return width * height;
   }
   calcPerimeter() {
     const { width, height } = this.getDimensions();
     console.log(
-      `The perimeter of this Square with
-side : ${width} called ${this.shapeName} is equal to = ${
-        (width + height) * 2
-      }`
+      `The perimeter of this Square = ${(width + height) * 2}
+side : ${width}
+---------------`
     );
+    return (width + height) * 2;
   }
 }
 //-------CIRCLE CLASS-------
 class Circle extends NonPolygon {
-  constructor(shapeName, radius) {
-    super(shapeName, radius);
+  constructor(radius) {
+    super("Circle", radius);
   }
 
   calcArea() {
     //A=πr^2
-    console.log(
-      `The area of this Circle 
-with radius ${this.radius} called ${this.shapeName} is equal to = ${(
-        Math.PI.toFixed(2) * Math.pow(this.radius, 2)
-      ).toFixed(2)}`
+    const area = (Math.PI.toFixed(2) * Math.pow(this.radius, 2)).toFixed(
+      2
     );
+    console.log(
+      `The area of this Circle  = ${area}
+radius: ${this.radius}
+---------------`
+    );
+    return area;
   }
   calcPerimeter() {
     //C=2πr
+    const perimeter = (2 * Math.PI.toFixed(2) * this.radius).toFixed(2);
     console.log(
-      `The perimeter of this Circle 
-with radius ${this.radius} called ${this.shapeName} is equal to = ${(
-        2 *
-        Math.PI.toFixed(2) *
-        this.radius
-      ).toFixed(2)}`
+      `The perimeter of this Circle  = ${perimeter}
+radius: ${this.radius}
+---------------`
     );
+    return perimeter;
   }
 }
 //-------CYLINDER CLASS-------
 class Cylinder extends Circle {
   #height;
-  constructor(shapeName, radius, height) {
-    super(shapeName, radius);
+  constructor(radius, height) {
+    super(radius);
     this.#height = height;
   }
 
   calcArea() {
     //A=2πrh + 2πr^2
+    const sufaceArea = (
+      2 * Math.PI.toFixed(2) * this.radius * this.#height +
+      2 * Math.PI.toFixed(2) * Math.pow(this.radius, 2)
+    ).toFixed(2);
     console.log(
-      `Surface Area :${(
-        2 * Math.PI.toFixed(2) * this.radius * this.#height +
-        2 * Math.PI.toFixed(2) * Math.pow(this.radius, 2)
-      ).toFixed(2)}
+      `Surface Area :${sufaceArea}
 radius ${this.radius}
 height ${this.#height}
-name ${this.shapeName}
 ---------------`
     );
+    const lateralArea = (
+      2 *
+      Math.PI.toFixed(2) *
+      this.radius *
+      this.#height
+    ).toFixed(2);
     console.log(
-      `Lateral Surface Area:${(
-        2 *
-        Math.PI.toFixed(2) *
-        this.radius *
-        this.#height
-      ).toFixed(2)} 
+      `Lateral Surface Area:${lateralArea} 
 radius ${this.radius}
 height ${this.#height}
-name ${this.shapeName}
 ---------------`
     );
+    return sufaceArea;
   }
   calcPerimeter() {
     //perimeter of a cylinder is basically a rectangle and two circles on the top and bottom
     // 4πr + 2h = 2(2πr+h)
+    const perimeter = (
+      2 *
+      (2 * Math.PI.toFixed(2) * this.radius + this.#height)
+    ).toFixed(2);
     console.log(
-      `The perimeter of this non polygen 
-with radius ${this.radius} called ${this.shapeName} is equal to = ${(
-        2 *
-        (2 * Math.PI.toFixed(2) * this.radius + this.#height)
-      ).toFixed(2)}`
+      `The perimeter of this Cylinder= ${perimeter}
+radius: ${this.radius}
+---------------`
     );
+    return perimeter;
   }
 }
 
-/*
 const myShape = new Shape("Recatangle");
 // accessing shape name with getter
 console.log(myShape.shapeName);
@@ -264,34 +269,25 @@ myShape.shapeName = 123;
 console.log(myShape.shapeName);
 //calling the methods
 console.log(myShape.calcArea());
-*/
 
-/*
 const myPolygen = new Polygon("Square", 54, 10);
 const myNonPolygen = new NonPolygon("Circle", 3);
 
 myPolygen.calcArea();
 myNonPolygen.calcPerimeter();
-*/
 
-/*
-const myRectangle = new Rectangle("test", 10, 5);
+const myRectangle = new Rectangle(10, 5);
 myRectangle.calcArea();
 myRectangle.calcPerimeter();
-*/
 
-/*
-const mySquare = new Square("test", 10, 10);
+const mySquare = new Square(10);
 mySquare.calcArea();
 mySquare.calcPerimeter();
- */
 
-/*
-const myCircle = new Circle("test", 10);
+const myCircle = new Circle(10);
 myCircle.calcArea();
 myCircle.calcPerimeter();
-*/
 
-const myCylinder = new Cylinder("test", 10, 10);
+const myCylinder = new Cylinder(10, 10);
 myCylinder.calcArea();
 myCylinder.calcPerimeter();
