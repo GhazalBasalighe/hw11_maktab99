@@ -1,10 +1,11 @@
-const signUpButton = document.querySelector(".sign-up-btn");
-const signInButton = document.querySelector(".sign-in-btn");
-const container = document.getElementById("container");
+const signUpButton = document.querySelector("#signUp");
+const signInButton = document.querySelector("#signIn");
+const container = document.querySelector(".container");
+
+signUpButton.addEventListener("click", () => {
+  container.classList.add("right-panel-active");
+});
 
 signInButton.addEventListener("click", () => {
-  container.classList.add("overlay-is-active");
-});
-signUpButton.addEventListener("click", () => {
-  container.classList.remove("overlay-is-active");
+  container.classList.remove("right-panel-active");
 });
