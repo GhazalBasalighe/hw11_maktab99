@@ -1,21 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 //FONT WEIGHT 400
-%light-font {
-  font-weight: 400;
-}
+$light-font: 400;
 
 //FONT WEIGHT 500
-%normal-font {
-  font-weight: 500;
-}
+$normal-font: 500;
 
 //FONT WEIGHT 700
-%bold-font {
-  font-weight: 700;
-}
+$bold-font: 700;
 
 //FONT SIZE 20PX
-%small-text {
-  font-size: 20px;
-}
+$medium-text: 20px;
+
+//FONT SIZE 14PX
+$small-text: 14px;
