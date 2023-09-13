@@ -114,6 +114,8 @@ class Rectangle extends Polygon {
   constructor(shapeName, width, height) {
     super(shapeName, width, height);
   }
+
+  //override and customize methods
   calcArea() {
     const { width, height } = this.getDimensions();
     console.log(
@@ -132,6 +134,48 @@ called ${this.shapeName} is equal to = ${(width + height) * 2}`
   }
 }
 //-------SQUARE CLASS-------
+/*NOTE : 
+this class is extended according to the problem and it does not make any logical sense for a square
+to have width and height! even though every square is also a rectangle
+The better mathematical approach would be as below:
+Shape -> #shapeName
+Polygen -> #numberOfSides
+Non Polygen -> #radius
+Rectangel -> #width , #lenght
+Square -> #side
+Circle -> nothing extra
+Cylinder -> #height
+*/
+class Square extends Polygon {
+  constructor(shapeName, width, height) {
+    // T.T wtf is this logic
+    super(shapeName, width, height);
+
+    // some sort of validation to help the logic... ?
+    if (width !== height) {
+      console.log("Careful! Squares don't actually have width and height");
+    }
+  }
+
+  //override and customize methods
+  //literally the same as recatngle bc every square is a rectangle
+  calcArea() {
+    const { width, height } = this.getDimensions();
+    console.log(
+      `The area of this Rectangle with
+width: ${width} and height: ${height} 
+called ${this.shapeName} is equal to = ${width * height}`
+    );
+  }
+  calcPerimeter() {
+    const { width, height } = this.getDimensions();
+    console.log(
+      `The perimeter of this Rectangle with
+width: ${width} and height: ${height} 
+called ${this.shapeName} is equal to = ${(width + height) * 2}`
+    );
+  }
+}
 //-------CIRCLE CLASS-------
 
 /*
