@@ -188,7 +188,7 @@ class Circle extends NonPolygon {
   calcArea() {
     //A=πr^2
     console.log(
-      `The area of this non polygen 
+      `The area of this Circle 
 with radius ${this.radius} called ${this.shapeName} is equal to = ${(
         Math.PI.toFixed(2) * Math.pow(this.radius, 2)
       ).toFixed(2)}`
@@ -197,7 +197,7 @@ with radius ${this.radius} called ${this.shapeName} is equal to = ${(
   calcPerimeter() {
     //C=2πr
     console.log(
-      `The perimeter of this non polygen 
+      `The perimeter of this Circle 
 with radius ${this.radius} called ${this.shapeName} is equal to = ${(
         2 *
         Math.PI.toFixed(2) *
@@ -206,26 +206,72 @@ with radius ${this.radius} called ${this.shapeName} is equal to = ${(
     );
   }
 }
+//-------CYLINDER CLASS-------
+class Cylinder extends Circle {
+  #height;
+  constructor(shapeName, radius, height) {
+    super(shapeName, radius);
+    this.#height = height;
+  }
+
+  calcArea() {
+    //A=2πrh + 2πr^2
+    console.log(
+      `Surface Area :${(
+        2 * Math.PI.toFixed(2) * this.radius * this.#height +
+        2 * Math.PI.toFixed(2) * Math.pow(this.radius, 2)
+      ).toFixed(2)}
+radius ${this.radius}
+height ${this.#height}
+name ${this.shapeName}
+---------------`
+    );
+    console.log(
+      `Lateral Surface Area:${(
+        2 *
+        Math.PI.toFixed(2) *
+        this.radius *
+        this.#height
+      ).toFixed(2)} 
+radius ${this.radius}
+height ${this.#height}
+name ${this.shapeName}
+---------------`
+    );
+  }
+  calcPerimeter() {
+    //perimeter of a cylinder is basically a rectangle and two circles on the top and bottom
+    // 4πr + 2h = 2(2πr+h)
+    console.log(
+      `The perimeter of this non polygen 
+with radius ${this.radius} called ${this.shapeName} is equal to = ${(
+        2 *
+        (2 * Math.PI.toFixed(2) * this.radius + this.#height)
+      ).toFixed(2)}`
+    );
+  }
+}
+
 /*
-const myExampleShape = new Shape("Recatangle");
+const myShape = new Shape("Recatangle");
 // accessing shape name with getter
-console.log(myExampleShape.shapeName);
+console.log(myShape.shapeName);
 //changing shape name with setter
-myExampleShape.shapeName = "Circle";
-console.log(myExampleShape.shapeName);
+myShape.shapeName = "Circle";
+console.log(myShape.shapeName);
 //testing the string validation
-myExampleShape.shapeName = 123;
-console.log(myExampleShape.shapeName);
+myShape.shapeName = 123;
+console.log(myShape.shapeName);
 //calling the methods
-console.log(myExampleShape.calcArea());
+console.log(myShape.calcArea());
 */
 
 /*
-const myExamplePolygen = new Polygon("Square", 54, 10);
-const myExampleNonPolygen = new NonPolygon("Circle", 3);
+const myPolygen = new Polygon("Square", 54, 10);
+const myNonPolygen = new NonPolygon("Circle", 3);
 
-myExamplePolygen.calcArea();
-myExampleNonPolygen.calcPerimeter();
+myPolygen.calcArea();
+myNonPolygen.calcPerimeter();
 */
 
 /*
@@ -240,6 +286,12 @@ mySquare.calcArea();
 mySquare.calcPerimeter();
  */
 
+/*
 const myCircle = new Circle("test", 10);
 myCircle.calcArea();
 myCircle.calcPerimeter();
+*/
+
+const myCylinder = new Cylinder("test", 10, 10);
+myCylinder.calcArea();
+myCylinder.calcPerimeter();
