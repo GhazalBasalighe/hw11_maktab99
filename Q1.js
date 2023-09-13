@@ -18,6 +18,8 @@ Polygon
 NOTE: all classes must have their own customized methods to calculate area 
 and perimeter
 */
+
+//-------SHAPE CLASS-------
 class Shape {
   #shapeName;
 
@@ -49,10 +51,38 @@ class Shape {
     console.log(`The perimeter of this ${this.#shapeName} is : `);
   }
 }
+
+//-------POLYGEN CLASS-------
+class Polygon extends Shape {
+  #width;
+  #height;
+  constructor(shapeName, width, height) {
+    super(shapeName);
+    this.#height = height;
+    this.#width = width;
+  }
+}
+
+//-------NON POLYGEN CLASS-------
+class NonPolygon extends Shape {
+  #radius;
+  constructor(shapeName, radius) {
+    super(shapeName);
+    this.#radius = radius;
+  }
+}
+
 const myExampleShape = new Shape("Recatangle");
+// accessing shape name with getter
 console.log(myExampleShape.shapeName);
+//changing shape name with setter
 myExampleShape.shapeName = "Circle";
 console.log(myExampleShape.shapeName);
+//testing the string validation
 myExampleShape.shapeName = 123;
 console.log(myExampleShape.shapeName);
+//calling the methods
 console.log(myExampleShape.calcArea());
+
+const myExamplePolygen = new Polygon("Square", 54, 10);
+const myExampleNonPolygen = new NonPolygon("Circle", 3);
