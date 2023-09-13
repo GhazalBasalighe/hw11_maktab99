@@ -7,12 +7,48 @@
 }
 // BODY
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 100vh;
+  margin: -20px 0 50px;
 }
 // CONTAINER
 .container {
-  border-radius: 20px;
   position: relative;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  .main-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    .content {
+      @extend %flex-item;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0 50px;
+      height: 100%;
+      text-align: center;
+    }
+  }
+  .sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+  }
+  .sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+  }
 }
 //HEADINGS
 h1 {
@@ -29,9 +65,21 @@ h1 {
 }
 span {
   @extend %small-text;
+  @extend %light-font;
+  color: $secondary-black;
 }
+// INPUTS AND FORM
 form {
+  @extend %flex-item;
+  flex-direction: column;
   input {
     @extend %input;
+    @extend %light-font;
+  }
+  button {
+    @extend %btn;
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }

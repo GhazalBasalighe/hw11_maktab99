@@ -1,8 +1,15 @@
 @use "./variables" as *;
+@use "./fonts" as *;
 //BUTTON
 %btn {
   border-radius: 20px;
-  border: 2px solid #fff;
+  border: none;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  @extend %normal-font;
+  @extend %small-text;
+  padding: 12px 45px;
+  transition: transform 80ms ease-in;
 }
 
 //FLEX ITEMS
@@ -29,4 +36,5 @@
   padding: 12px 15px;
   margin: 8px 0;
   width: 100%;
+  color: $placeholder-color;
 }

@@ -1,5 +1,20 @@
-$primary-red : #FF4B2B;
-$secondary-black : #2F2F2F;
-$bg-gradient : linear-gradient(91deg, #FF4B2B 0.51%, #FF416C 99.42%);
-$input-bg : #EEEEEE;
-$placeholder-color : #757575;
+$primary-red: #ff4b2b;
+$secondary-black: #2f2f2f;
+$bg-gradient: linear-gradient(91deg, #ff4b2b 0.51%, #ff416c 99.42%);
+$input-bg: #eeeeee;
+$placeholder-color: #757575;
+
+//ANIMATIONS
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
