@@ -73,6 +73,7 @@ span {
   //SMALL BUTTONS
   button {
     @extend %btn;
+    margin-top: 20px;
     &:active {
       transform: scale(0.9);
     }

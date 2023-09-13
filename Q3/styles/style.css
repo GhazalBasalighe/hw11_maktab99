@@ -117,6 +117,9 @@ span {
   height: 100%;
   text-align: center;
 }
+.main-container button {
+  margin-top: 20px;
+}
 .main-container button:active {
   transform: scale(0.9);
 }
