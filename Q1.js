@@ -45,10 +45,10 @@ class Shape {
 
   //   methods for calculation of area and perimeter
   calcArea() {
-    console.log(`The area of this ${this.#shapeName} is : `);
+    console.log(`The area of this ${this.#shapeName} `);
   }
   calcPerimeter() {
-    console.log(`The perimeter of this ${this.#shapeName} is : `);
+    console.log(`The perimeter of this ${this.#shapeName} `);
   }
 }
 
@@ -61,6 +61,21 @@ class Polygon extends Shape {
     this.#height = height;
     this.#width = width;
   }
+  //overriding methods
+  calcArea() {
+    console.log(
+      `The area of this polygen with
+width: ${this.#width} and height: ${this.#height} 
+called ${this.shapeName}`
+    );
+  }
+  calcPerimeter() {
+    console.log(
+      `The perimeter of this polygen with
+width: ${this.#width} and height: ${this.#height} 
+called ${this.shapeName}`
+    );
+  }
 }
 
 //-------NON POLYGEN CLASS-------
@@ -70,8 +85,22 @@ class NonPolygon extends Shape {
     super(shapeName);
     this.#radius = radius;
   }
+  //overriding methods
+  calcArea() {
+    console.log(
+      `The area of this non polygen 
+with radius ${this.#radius} called ${this.shapeName}`
+    );
+  }
+  calcPerimeter() {
+    console.log(
+      `The perimeter of this non polygen 
+with radius ${this.#radius} called ${this.shapeName}`
+    );
+  }
 }
 
+/*
 const myExampleShape = new Shape("Recatangle");
 // accessing shape name with getter
 console.log(myExampleShape.shapeName);
@@ -83,6 +112,10 @@ myExampleShape.shapeName = 123;
 console.log(myExampleShape.shapeName);
 //calling the methods
 console.log(myExampleShape.calcArea());
+*/
 
 const myExamplePolygen = new Polygon("Square", 54, 10);
 const myExampleNonPolygen = new NonPolygon("Circle", 3);
+
+myExamplePolygen.calcArea();
+myExampleNonPolygen.calcPerimeter();
