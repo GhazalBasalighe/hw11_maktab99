@@ -2,13 +2,15 @@
 const perimeterPlaceHolder = document.querySelector(".perimeter");
 const areaPlaceHolder = document.querySelector(".area");
 const dropDownList = document.querySelector("#shapes");
+const submitButton = document.querySelector("#btn");
 
-const radiusInput = document.querySelector("#Radius");
-const widthInput = document.querySelector("#Width");
-const heightInput = document.querySelector("#Height");
-const sideInput = document.querySelector("#Side");
+let radiusInput = document.querySelector("#Radius");
+let widthInput = document.querySelector("#Width");
+let heightInput = document.querySelector("#Height");
+let sideInput = document.querySelector("#Side");
 
 let selectedOption;
+let inputValue; // Variable to store the input value
 // EVENT LISTENERS
 dropDownList.addEventListener("change", () => {
   selectedOption = dropDownList.value;
@@ -34,6 +36,29 @@ dropDownList.addEventListener("change", () => {
       radiusInput.removeAttribute("disabled");
       heightInput.removeAttribute("disabled");
   }
+});
 
-  console.log(selectedOption);
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  switch (selectedOption) {
+    case "Circle":
+      inputValue = radiusInput.value;
+      break;
+    case "Square":
+      inputValue = sideInput.value;
+      break;
+    case "Rectangle":
+      inputValue = `Width: ${widthInput.value}, Height: ${heightInput.value}`;
+      break;
+    case "Cylinder":
+      inputValue = `Radius: ${radiusInput.value}, Height: ${heightInput.value}`;
+  }
+});
+
+//RESETTING INPUT VALUES AFTER REFRESH
+document.addEventListener("DOMContentLoaded", () => {
+  radiusInput.value = "";
+  widthInput.value = "";
+  heightInput.value = "";
+  sideInput.value = "";
 });
