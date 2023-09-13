@@ -20,17 +20,39 @@ and perimeter
 */
 class Shape {
   #shapeName;
+
+  //constructor for initialization
   constructor(shapeName) {
     this.#shapeName = shapeName;
   }
+
+  //accessing the shapeName property from outside is only possible with getter/setter
   get shapeName() {
     return this.#shapeName;
   }
+
+  //for changing the shapeName after initializing
   set shapeName(newName) {
-    return (this.#shapeName = newName);
+    //validation
+    if (typeof newName === "string") {
+      return (this.#shapeName = newName);
+    } else {
+      console.error("shape name can only be a string!");
+    }
+  }
+
+  //   methods for calculation of area and perimeter
+  calcArea() {
+    console.log(`The area of this ${this.#shapeName} is : `);
+  }
+  calcPerimeter() {
+    console.log(`The perimeter of this ${this.#shapeName} is : `);
   }
 }
 const myExampleShape = new Shape("Recatangle");
 console.log(myExampleShape.shapeName);
 myExampleShape.shapeName = "Circle";
 console.log(myExampleShape.shapeName);
+myExampleShape.shapeName = 123;
+console.log(myExampleShape.shapeName);
+console.log(myExampleShape.calcArea());
