@@ -41,26 +41,6 @@ dropDownList.addEventListener("change", () => {
 
 submitButton.addEventListener("click", function (e) {
   e.preventDefault();
-  // if (selectedOption === "Circle") {
-  //   inputValue = radiusInput.value;
-  //   shape = new Circle(inputValue);
-  //   console.log(shape.calcArea());
-  // } else if (selectedOption === "Square") {
-  //   inputValue = sideInput.value;
-  //   shape = new Square(inputValue);
-  //   // console.log(shape);
-  // } else if (selectedOption === "Rectangle") {
-  //   inputValue = { Width: widthInput.value, Height: heightInput.value };
-  //   shape = new Rectangle(inputValue.Width, inputValue.Height);
-  //   // console.log(shape);
-  // } else if (selectedOption === "Cylinder") {
-  //   inputValue = {
-  //     Radius: radiusInput.value,
-  //     Height: heightInput.value,
-  //   };
-  //   shape = new Cylinder(inputValue.Radius, inputValue.Height);
-  //   // console.log(shape);
-  // }
   switch (selectedOption) {
     case "Circle":
       inputValue = radiusInput.value;
