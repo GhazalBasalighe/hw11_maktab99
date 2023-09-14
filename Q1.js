@@ -139,13 +139,14 @@ height: ${height}
   }
   calcPerimeter() {
     const { width, height } = this.getDimensions();
+    const perimeter = height * 2 + width * 2;
     console.log(
-      `The perimeter of this Rectangle = ${(width + height) * 2}
+      `The perimeter of this Rectangle = ${perimeter}
 width: ${width}
 height: ${height} 
 ---------------`
     );
-    return (width + height) * 2;
+    return perimeter;
   }
 }
 //-------SQUARE CLASS-------
@@ -172,11 +173,11 @@ side : ${width}
   calcPerimeter() {
     const { width, height } = this.getDimensions();
     console.log(
-      `The perimeter of this Square = ${(width + height) * 2}
+      `The perimeter of this Square = ${width * 2 + height * 2}
 side : ${width}
 ---------------`
     );
-    return (width + height) * 2;
+    return width * 2 + height * 2;
   }
 }
 //-------CIRCLE CLASS-------
@@ -258,36 +259,36 @@ radius: ${this.radius}
   }
 }
 
-const myShape = new Shape("Recatangle");
-// accessing shape name with getter
-console.log(myShape.shapeName);
-//changing shape name with setter
-myShape.shapeName = "Circle";
-console.log(myShape.shapeName);
-//testing the string validation
-myShape.shapeName = 123;
-console.log(myShape.shapeName);
-//calling the methods
-console.log(myShape.calcArea());
+// const myShape = new Shape("Recatangle");
+// // accessing shape name with getter
+// console.log(myShape.shapeName);
+// //changing shape name with setter
+// myShape.shapeName = "Circle";
+// console.log(myShape.shapeName);
+// //testing the string validation
+// myShape.shapeName = 123;
+// console.log(myShape.shapeName);
+// //calling the methods
+// console.log(myShape.calcArea());
 
-const myPolygen = new Polygon("Square", 54, 10);
-const myNonPolygen = new NonPolygon("Circle", 3);
+// const myPolygen = new Polygon("Square", 54, 10);
+// const myNonPolygen = new NonPolygon("Circle", 3);
 
-myPolygen.calcArea();
-myNonPolygen.calcPerimeter();
+// myPolygen.calcArea();
+// myNonPolygen.calcPerimeter();
 
-const myRectangle = new Rectangle(10, 5);
-myRectangle.calcArea();
-myRectangle.calcPerimeter();
+// const myRectangle = new Rectangle(10, 5);
+// myRectangle.calcArea();
+// myRectangle.calcPerimeter();
 
-const mySquare = new Square(10);
-mySquare.calcArea();
-mySquare.calcPerimeter();
+// const mySquare = new Square(10);
+// mySquare.calcArea();
+// mySquare.calcPerimeter();
 
-const myCircle = new Circle(10);
-myCircle.calcArea();
-myCircle.calcPerimeter();
+// const myCircle = new Circle(10);
+// myCircle.calcArea();
+// myCircle.calcPerimeter();
 
-const myCylinder = new Cylinder(10, 10);
-myCylinder.calcArea();
-myCylinder.calcPerimeter();
+// const myCylinder = new Cylinder(10, 10);
+// myCylinder.calcArea();
+// myCylinder.calcPerimeter();

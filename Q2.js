@@ -1,6 +1,6 @@
 //SELECTING DOM ELEMENTS
-const perimeterPlaceHolder = document.querySelector(".perimeter");
-const areaPlaceHolder = document.querySelector(".area");
+let perimeter = document.querySelector(".perimeter");
+let area = document.querySelector(".area");
 const dropDownList = document.querySelector("#shapes");
 const submitButton = document.querySelector("#btn");
 
@@ -11,6 +11,7 @@ let sideInput = document.querySelector("#Side");
 
 let selectedOption;
 let inputValue; // Variable to store the input value
+let shape;
 // EVENT LISTENERS
 dropDownList.addEventListener("change", () => {
   selectedOption = dropDownList.value;
@@ -38,20 +39,60 @@ dropDownList.addEventListener("change", () => {
   }
 });
 
-submitButton.addEventListener("click", (e) => {
+submitButton.addEventListener("click", function (e) {
   e.preventDefault();
+  // if (selectedOption === "Circle") {
+  //   inputValue = radiusInput.value;
+  //   shape = new Circle(inputValue);
+  //   console.log(shape.calcArea());
+  // } else if (selectedOption === "Square") {
+  //   inputValue = sideInput.value;
+  //   shape = new Square(inputValue);
+  //   // console.log(shape);
+  // } else if (selectedOption === "Rectangle") {
+  //   inputValue = { Width: widthInput.value, Height: heightInput.value };
+  //   shape = new Rectangle(inputValue.Width, inputValue.Height);
+  //   // console.log(shape);
+  // } else if (selectedOption === "Cylinder") {
+  //   inputValue = {
+  //     Radius: radiusInput.value,
+  //     Height: heightInput.value,
+  //   };
+  //   shape = new Cylinder(inputValue.Radius, inputValue.Height);
+  //   // console.log(shape);
+  // }
   switch (selectedOption) {
     case "Circle":
       inputValue = radiusInput.value;
+      shape = new Circle(inputValue);
+      showResult(shape.calcArea(), shape.calcPerimeter());
+      // shape.calcArea();
+      // shape.calcPerimeter();
       break;
     case "Square":
       inputValue = sideInput.value;
+      shape = new Square(inputValue);
+      showResult(shape.calcArea(), shape.calcPerimeter());
+      // shape.calcArea();
+      // shape.calcPerimeter();
       break;
     case "Rectangle":
-      inputValue = `Width: ${widthInput.value}, Height: ${heightInput.value}`;
+      inputValue = { Width: widthInput.value, Height: heightInput.value };
+      shape = new Rectangle(inputValue.Width, inputValue.Height);
+      showResult(shape.calcArea(), shape.calcPerimeter());
+      // shape.calcArea();
+      // shape.calcPerimeter();
       break;
     case "Cylinder":
-      inputValue = `Radius: ${radiusInput.value}, Height: ${heightInput.value}`;
+      inputValue = {
+        Radius: radiusInput.value,
+        Height: heightInput.value,
+      };
+      shape = new Cylinder(inputValue.Radius, inputValue.Height);
+      showResult(shape.calcArea(), shape.calcPerimeter());
+      // shape.calcArea();
+      // shape.calcPerimeter();
+      break;
   }
 });
 
@@ -62,3 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
   heightInput.value = "";
   sideInput.value = "";
 });
+
+// ------------------USING CLASSES AND MAKING INSTANCES------------------
+function showResult(a, b) {
+  area.textContent = a;
+  perimeter.textContent = b;
+}
