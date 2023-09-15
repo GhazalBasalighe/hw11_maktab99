@@ -1,10 +1,8 @@
-# JavaScript Shape Calculator
-
-This JavaScript project showcases Object-Oriented Programming (OOP) concepts by implementing shape and descendant classes, including Square, Circle, Cylinder, and more. It calculates both the area and perimeter of these shapes.
+# hw11_maktab 99
 
 ## Question 1: JavaScript Shape Calculator
 
-In this section of the project, we've implemented JavaScript classes for various geometric shapes, allowing you to calculate their area and perimeter. The following shapes are included as classes:
+In this section of the project, I've implemented JavaScript classes for various geometric shapes, allowing you to calculate their area and perimeter. The following shapes are included as classes:
 
 - Square
 - Circle
@@ -14,7 +12,7 @@ You can use this functionality to perform geometric calculations. Here's how to 
 
 1. Include the `shape.js` script in your HTML file.
 2. Create instances of the shape classes with the required parameters (e.g., side length for a square, radius for a circle, etc.).
-3. Call the `calculateArea()` and `calculatePerimeter()` methods on these instances to get the results.
+3. Call the `calcArea()` and `calcPerimeter()` methods on these instances to get the results.
 
 For example, to calculate the area and perimeter of a square:
 
