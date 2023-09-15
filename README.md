@@ -24,7 +24,8 @@ const area = mySquare.calcArea(); // Calculate the area
 const perimeter = mySquare.calcPerimeter(); // Calculate the perimeter
 console.log(`Area: ${area}, Perimeter: ${perimeter}`);
 ```
-##Question 2: Interactive Web Interface
+
+## Question 2: Interactive Web Interface
 
 In this section, we've built an interactive web interface that utilizes the JavaScript shape calculator logic from Question 1. The interface is implemented using the Bootstrap framework, making it user-friendly and visually appealing.
 
@@ -36,7 +37,7 @@ To access the interactive interface:
 
 This user-friendly interface simplifies geometric calculations for users.
 
-##Question 3: Sliding Sign-In Page
+## Question 3: Sliding Sign-In Page
 
 In addition to the shape calculator, this project also includes a sliding sign-in page implemented with HTML and SCSS. The sign-in page features a stylish sliding animation for a modern and engaging user experience.
 
