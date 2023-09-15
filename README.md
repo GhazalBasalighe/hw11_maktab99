@@ -39,6 +39,12 @@ This user-friendly interface simplifies geometric calculations for users.
 
 In addition to the shape calculator, this project also includes a sliding sign-in page implemented with HTML and SCSS. The sign-in page features a stylish sliding animation for a modern and engaging user experience.
 
+#### Sign in
+![Sign in](https://github.com/GhazalBasalighe/hw09_maktab99/assets/127536254/bf073aab-1799-4fa3-bb53-25f449815735)
+
+#### Sign up
+![Sign up](https://github.com/GhazalBasalighe/hw09_maktab99/assets/127536254/9b003d20-221e-4a0a-adae-3a19e00bdbef)
+
 To access the sliding sign-in page:
 
     Open the sliding-sign-in.html file in your web browser.
